@@ -34,7 +34,7 @@ int main(int argc, char *argv[]) {
     }
 
     // Write the 2-byte load address (little-endian)
-    uint16_t load_address = 0x0200;
+    uint16_t load_address = 001000;
     fwrite(&load_address, sizeof(uint16_t), 1, output);
 
     // Write the 2-byte length (little-endian)

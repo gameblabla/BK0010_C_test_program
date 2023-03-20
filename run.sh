@@ -1,7 +1,6 @@
 rm *.bin
-pdp11-aout-gcc -Ttext=0x0200 -Tdata=0x0200 -Tbss=0x0200 -Os -fomit-frame-pointer -nostdlib -nostartfiles -ffreestanding -c main.c -o temp.bin -s
-#Generate assembly
-#pdp11-aout-gcc -Ttext=0x0200 -Tdata=0x0200 -Tbss=0x0200 -Os -fomit-frame-pointer -nostdlib -nostartfiles -ffreestanding -S  main.c
+pdp11-aout-gcc -nostdlib -Ttext 0x200 -m10 -Os -fomit-frame-pointer -ffreestanding -N -e _start crt0.s main.c -o main
+pdp11-aout-objcopy -O binary main temp.bin
 gcc bkbin2bin.c -o bkbin2bin.elf
 ./bkbin2bin.elf temp.bin main.bin
-rm temp.bin *.o
+rm t.bin temp.bin
