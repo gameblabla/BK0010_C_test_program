@@ -1,0 +1,3 @@
+[submodule "bkbin2wav"]
+	path = bkbin2wav
+	url = https://github.com/raydac/bkbin2wav
